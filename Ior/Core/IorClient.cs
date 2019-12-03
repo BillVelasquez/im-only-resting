@@ -72,6 +72,10 @@ namespace Swensen.Ior.Core {
                 }
             }
 
+            // 20191203 William Velasquez http://creativosdigitales.co
+            // Force TLS 1.2 Connection
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             var client = new HttpClient(handler);
             var request = new HttpRequestMessage {
                 RequestUri = requestModel.Url, 
